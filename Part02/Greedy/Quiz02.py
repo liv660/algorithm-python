@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+# p.92 실전문제 02 - 큰 수의 법칙
 N, M, K = map(int, input().split())
 # print("N M K :", N, M, K)
 
