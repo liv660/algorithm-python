@@ -1,16 +1,15 @@
 # p.312 기출문제 02 - 곱하기 혹은 더하기
 
+# 1. 입력 받기
 S = list(map(int, list(input())))
-# print(S)
 
-result = 0
-for i in S:
-  if (i == 0):
-    pass
+# 2. 0이 아니면 곱하기
+idx, val = 0, 0
+while idx < len(S):
+    if(val == 0):
+        val += S[idx]
+    else:
+        val *= S[idx]
+    idx += 1
 
-  if (result == 0 or result == 1 or i == 1):
-    result += i
-  else:
-    result *= i
-
-print(result)
+print(val)Q
