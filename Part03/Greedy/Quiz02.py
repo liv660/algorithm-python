@@ -12,4 +12,4 @@ while idx < len(S):
         val *= S[idx]
     idx += 1
 
-print(val)Q
+print(val)
