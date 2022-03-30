@@ -1,22 +1,25 @@
 # p.311 기출문제 01 - 모험가 길드
 
-n = int(input())
-# print("전체 모험가: ", n)
-
+# 1. 입력 받기
+N = int(input())
 data = list(map(int, input().split()))
-# print("모험가 공포도: ", data)
 
-data.sort(reverse = True)
-# print("내림차순 정렬: ", data)
+# 2. 인덱스, 그룹 수, 미포함 모험가 수
+idx, cnt, uncnt = 0, 0, 0
 
-index = 0;
-result = 0;
+# 3. 내림차순 정렬
+data.sort(reverse=True)
 
-while index < n:
-  if (data[index] <= n):
-    index += data[index]
-    result += 1;
-  else:
-    break
+# 4. 인덱스 내의 그룹 수 구하기
+while idx < N:
+    # 공포도가 남아있는 모험가 수보다 클 때 pass
+    if(data[idx] > (N-uncnt)):
+        idx += 1
+        uncnt += 1
+        pass
 
-print("그룹: ", result)
+    # 공포도 크기의 그룹 생성
+    cnt += 1
+    idx += data[idx]
+
+print(cnt)
